@@ -26,6 +26,8 @@ class BaseBits:
     initialization, and top-level error handling""" 
     def __init__(self):
         """Initializes new instance of the class and sets up hardware"""
+
+        # Sets up the hardware and performs initial diagnostics
         try:
             self.ev3 = EV3Brick()  
             self.ev3.light.on(Color.GREEN)
