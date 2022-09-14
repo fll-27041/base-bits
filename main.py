@@ -138,12 +138,12 @@ class BaseBits:
             ("<", self.previous_page)
         ]
 
-    def next_page(self):
+    def next_page(self, dup_self):
         """Advances to the next page of the menu"""
         self.page = self.page + 1
         print("Advanced to page " + str(self.page))
 
-    def previous_page(self):
+    def previous_page(self, dup_self):
         """Goes back to the previous page of the menu"""
         self.page = self.page - 1
         print("Going back to page " + str(self.page))
@@ -217,10 +217,11 @@ class BaseBits:
                 # from the passes list, which is a list of 2-element tuples.
                 # The individual missions are grouped into pages of 5, so we 
                 # multiple by the current page number, then add the number of the 
-                # button to find the program.  The [1] is funding the stored function
-                # that runs the mision.  We are then calling it like a function with
+                # button to find the program.  The [1] is finding the stored function
+                # that runs the mission.  We are then calling it like a function with
                 # the () and passing the BaseBits object in so that function can use it.
-                self.passes[self.page * 5 + button_index][1](self)
+                function = self.passes[self.page * 5 + button_index][1]
+                function(self)
             except Exception as e:
                 print(str(e))
                 # Play a very disappointed noise
