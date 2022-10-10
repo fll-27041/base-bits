@@ -75,3 +75,9 @@ def run(bb: BaseBits):
         pass
     
     bb.ev3.speaker.beep()  # Done, return to menu
+
+
+    data = DataLog('left_average_reflectivity, right_average_reflectivity')
+
+    data.log(left_average_reflectivity, right_average_reflectivity)
+
