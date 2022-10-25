@@ -17,12 +17,7 @@ from missions import mission2
 from missions import mission3
 from missions import mission4
 from missions import mission5
-<<<<<<< HEAD
 from missions import mission7
-=======
-
-# test change
->>>>>>> d9fba579a716853c393ca1febb0eba89812c635e
 
 class BaseBits:
     """Encapsulates base code for First Lego League projects.  
